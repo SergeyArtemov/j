@@ -1,15 +1,15 @@
 package ru.job4j;
 /**
-* Class Класс для вычисления арифметических операций
+* Class РљР»Р°СЃСЃ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРёС… РѕРїРµСЂР°С†РёР№
 * @author sartemov
 * @since 25.04.2017
 * @version 1
 */
 public class Calculate {
 /**
-* Метод main
-* @param args входная строка параметров
-* @return пустой тип void
+* РњРµС‚РѕРґ main
+* @param args РІС…РѕРґРЅР°СЏ СЃС‚СЂРѕРєР° РїР°СЂР°РјРµС‚СЂРѕРІ
+* @return РїСѓСЃС‚РѕР№ С‚РёРї void
 */
 	public static void main(String[] args){
 		System.out.println("Hello World");
