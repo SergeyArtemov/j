@@ -1,0 +1,64 @@
+package ru.job4j.calculator;
+
+import org.junit.Test;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
+/**
+* Test calculator.
+*
+* @author Sergey Artemov (mailto:sergeyartemov@yandex.ru)
+* @version $Id$
+* @since 0.1
+*/
+public class CalculatorTest {
+	/**
+	* Tests.
+	* add
+	*/
+	@Test
+	public void whenAddOnePlusOneThenTwo() {
+	Calculator calc = new Calculator();
+	calc.add(1D, 1D);
+	double result = calc.getResult();
+	double expected = 2D;
+	assertThat(result, is(expected));
+	}
+	/**
+	* Tests.
+    * substruct.
+	*/
+	@Test
+	public void whenSubstructTwoMinusOneThenOne() {
+	Calculator calc = new Calculator();
+	calc.substruct(2D, 1D);
+	double result = calc.getResult();
+	double expected = 1D;
+	assertThat(result, is(expected));
+	}
+	/**
+	* Tests.
+	* div.
+	*/
+	@Test
+	public void whenDivSixDivTwoThenThree() {
+	Calculator calc = new Calculator();
+	calc.div(6D, 2D);
+	double result = calc.getResult();
+	double expected = 3D;
+	assertThat(result, is(expected));
+	}
+	/**
+	* Tests.
+	* multiple.
+	*/
+	@Test
+	public void whenMultipleTwoByThreeThenSix() {
+	Calculator calc = new Calculator();
+	calc.multiple(2D, 3D);
+	double result = calc.getResult();
+	double expected = 6D;
+	assertThat(result, is(expected));
+	}
+}
