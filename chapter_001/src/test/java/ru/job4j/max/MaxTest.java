@@ -26,4 +26,16 @@ public class MaxTest {
 	double expected = 2;
 	assertThat(result, is(expected));
 	}
+		/**
+	* Tests.
+	* max3
+	*/
+	@Test
+	public void whenMaxOneTwoThreeThenThree() {
+	Max maxObj = new Max();
+
+	double result = maxObj.max(1, 2, 3);
+	double expected = 3;
+	assertThat(result, is(expected));
+	}
 }
