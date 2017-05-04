@@ -16,8 +16,7 @@ public class PointTest {
 	*/
 	@Test
 	public void whenFourAndThreeThenTrue() {
-	Point point = new Point();
-	point.point(2, 11);
+	Point point = new Point(2, 11);
 	boolean result = point.is(4, 3);
 	boolean expected = true;
 	assertThat(result, is(expected));

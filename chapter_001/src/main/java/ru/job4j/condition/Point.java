@@ -16,30 +16,30 @@ public class Point {
 	* y.
 	*/
 	private int y;
-		/**
-	 * point.
-	 * @param x **x**
-	 * @param y **y**
-	 */
-	public void point(int x, int y) {
-	this.x = x;
-	this.y = y;
-	}
-		/**
+	/**
 	 * getX.
 	 * @return **getX**
 	 */
-	public int getX() {
+	protected int getX() {
 	return this.x;
 	}
-		/**
+	/**
 	 * getY.
 	 * @return **getY**
 	 */
-	public int getY() {
+	protected int getY() {
 	return this.y;
 	}
-		/**
+	/**
+	 * Point.
+	 * @param x **x**
+	 * @param y **y**
+	 */
+	public Point(int x, int y) {
+	this.x = x;
+	this.y = y;
+	}
+	/**
 	 * is.
 	 * @param a **a**
 	 * @param b **b**
