@@ -15,10 +15,10 @@ public class CounterTest {
 	* Test.
 	*/
 	@Test
-	public void whenOneAndSixThenThree() {
+	public void whenSumEvenNumbersFromOneToTenThenThirty() {
 	Counter counter = new Counter();
-	int result = counter.add(1, 6);
-	int expected = 3;
+	int result = counter.add(1, 10);
+	int expected = 30;
 	assertThat(result, is(expected));
 	}
 }
