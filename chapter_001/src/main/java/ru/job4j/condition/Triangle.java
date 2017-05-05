@@ -38,14 +38,10 @@ public class Triangle {
 	 * @return **area**
 	 */
 	public double area() {
-		double p;
-		double ab;
-		double bc;
-		double ac;
-		ab = distan(this.a, this.b);
-		bc = distan(this.b, this.c);
-		ac = distan(this.a, this.c);
-		p = (ab + bc + ac) / 2D;
+		double ab = distan(this.a, this.b);
+		double bc = distan(this.b, this.c);
+		double ac = distan(this.a, this.c);
+		double p = (ab + bc + ac) / 2D;
 		return (Math.sqrt(p * (p - ab) * (p - bc) * (p - ac)));
 	}
 	/**
@@ -55,6 +51,6 @@ public class Triangle {
 	 * @return  **расстояние между точками**
 	 */
 	 private double distan(Point a, Point b) {
-		return Math.sqrt((a.getX() - b.getX()) * (a.getX() - b.getX()) + (a.getY() - b.getY()) * (a.getY() - b.getY()));
+		return Math.sqrt(Math.pow(a.getX() - b.getX(), 2)  + Math.pow(a.getY() - b.getY(), 2));
 	}
 }
