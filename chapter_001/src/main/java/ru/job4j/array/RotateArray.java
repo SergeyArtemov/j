@@ -10,8 +10,8 @@ public class RotateArray {
 	*/
 	public int[][] rotate(int[][] array) {
 			int len = array.length; // длинна массива
-			int m = len / 2 - 1; // условный пол длины массива
-			int n = (len + 1) / 2 - 1; // условный пол длины массива
+			int m = len / 2 - 1; // условная половина высоты массива
+			int n = (len + 1) / 2 - 1; // условная половина ширины массива
 			int p; //временные переменные
 			int q; //временные переменные
 			for (int i = 0; i <= m; i++) {
