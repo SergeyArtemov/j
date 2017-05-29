@@ -1,4 +1,5 @@
 package ru.job4j.string;
+//import java.lang.String;
 /**
 *Mystring.
 *
@@ -14,14 +15,8 @@ public class Mystring {
 		int orLen = origin.length();
 		int orSub = sub.length();
 		boolean res = true;
-		char[] or = new char[orLen];
-		char[] sb = new char[orSub];
-		for (int i = 0; i <= orLen - 1; i++) {
-			or[i] = origin.charAt(i);
-		}
-		for (int i = 0; i <= orSub - 1; i++) {
-			sb[i] = sub.charAt(i);
-		}
+		char[] or = origin.toCharArray();
+		char[] sb = sub.toCharArray();
 		for (int i = 0; i <= orLen - orSub; i++) {
 			res = true;
 			for (int j = 0; j <= orSub - 1; j++) {
