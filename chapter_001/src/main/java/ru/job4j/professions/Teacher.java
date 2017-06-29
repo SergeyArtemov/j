@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Teacher extends Profession {
     private String firstSubject;
     private String secondSublect;
-    private ArrayList<String> listOfClass;
+    public ArrayList<String> listOfClass;
 
     public Teacher(){
         listOfClass = new ArrayList<>();
