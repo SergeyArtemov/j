@@ -21,7 +21,7 @@ public class Profession {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -29,7 +29,7 @@ public class Profession {
     }
 
     public boolean isReadyToMove() {
-        return readyToMove;
+        return this.readyToMove;
     }
 
     public void setReadyToMove(boolean readyToMove) {
