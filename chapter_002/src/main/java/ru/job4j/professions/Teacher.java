@@ -30,7 +30,8 @@ public class Teacher extends Profession {
         this.secondSublect = secondSublect;
     }
 
-    public void teachClass(SchoolClass schoolClass){
+    public String teachClass(SchoolClass schoolClass){
         listOfClass.add(schoolClass);
+        return this.getTheName() + " учит(-ил) класс " + schoolClass.getName();
     }
 }

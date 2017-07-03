@@ -14,8 +14,9 @@ public class Engineer extends Profession {
         listOfProject = new ArrayList<>();
     }
 
-    public void workOnProject(Project project){
+    public String workOnProject(Project project){
         listOfProject.add(project);
+        return this.getTheName() + " участвовал в проекте " + project.getName();
     }
 
     public String getSpecialization() {

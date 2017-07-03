@@ -30,8 +30,9 @@ public class Doctor extends Profession {
         this.specialization = specialization;
     }
 
-    public void treatPatient(Patient patient){
+    public String treatPatient(Patient patient){
         listOfPatient.add(patient);
+        return this.getTheName() + " лечит(-ил) " + patient.getTheName();
     }
 
     public ArrayList<Patient> GiveAllPatients(){
