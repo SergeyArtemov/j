@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Doctor extends Profession {
     private String speciality;
     private String specialization;
-    public ArrayList<String> listOfPatient;
+    public ArrayList<Patient> listOfPatient;
 
     public Doctor(){
         listOfPatient = new ArrayList<>();
@@ -30,11 +30,11 @@ public class Doctor extends Profession {
         this.specialization = specialization;
     }
 
-    public void treatPatient(String patient){
+    public void treatPatient(Patient patient){
         listOfPatient.add(patient);
     }
 
-    public ArrayList<String> GiveAllPatients(){
+    public ArrayList<Patient> GiveAllPatients(){
         return listOfPatient;
     }
 }

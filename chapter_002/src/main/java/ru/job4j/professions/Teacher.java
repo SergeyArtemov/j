@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Teacher extends Profession {
     private String firstSubject;
     private String secondSublect;
-    public ArrayList<String> listOfClass;
+    public ArrayList<SchoolClass> listOfClass;
 
     public Teacher(){
         listOfClass = new ArrayList<>();
@@ -30,7 +30,7 @@ public class Teacher extends Profession {
         this.secondSublect = secondSublect;
     }
 
-    public void teachClass(String schoolClass){
+    public void teachClass(SchoolClass schoolClass){
         listOfClass.add(schoolClass);
     }
 }

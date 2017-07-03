@@ -8,13 +8,13 @@ import java.util.ArrayList;
 public class Engineer extends Profession {
     private String speciality;
     private String specialization;
-    public ArrayList<String> listOfProject;
+    public ArrayList<Project> listOfProject;
 
     public Engineer(){
         listOfProject = new ArrayList<>();
     }
 
-    public void workOnProject(String project){
+    public void workOnProject(Project project){
         listOfProject.add(project);
     }
 
