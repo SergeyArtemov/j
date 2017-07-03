@@ -19,42 +19,81 @@ public class ProfessionTest {
     public void whenAddTwoPatientsThenGiveListOfTwoPatients(){
       Doctor doctorIvanov = new Doctor();
       doctorIvanov.setTheName("Иванов И.И.");
-      doctorIvanov.treatPatient("Семенов С.С.");
-      doctorIvanov.treatPatient("Васильев В.В.");
+      Patient pat1 = new Patient("Семенов С.С.");
+      doctorIvanov.treatPatient(pat1);
+      Patient pat2 = new Patient("Васильев В.В.");
+      doctorIvanov.treatPatient(pat2);
 
-      ArrayList<String> expected = new ArrayList<>();
-      expected.add("Семенов С.С.");
-      expected.add("Васильев В.В.");
+      ArrayList<Patient> expected = new ArrayList<>();
+      expected.add(pat1);
+      expected.add(pat2);
 
       assertThat(doctorIvanov.listOfPatient,is(expected));
     }
+
+  @Test
+  public void whenDoctorTreatPatientThenGetMessageAboutThis(){
+    Doctor doctorIvanov = new Doctor();
+    doctorIvanov.setTheName("Иванов И.И.");
+    Patient pat1 = new Patient("Семенов С.С.");
+    doctorIvanov.treatPatient(pat1);
+
+    assertThat(doctorIvanov.treatPatient(pat1),is("Иванов И.И. лечит(-ил) Семенов С.С."));
+  }
 
     @Test
     public void whenAddTwoProjectThenGiveListOfTwoProjects(){
       Engineer engineerIvanov = new Engineer();
       engineerIvanov.setTheName("Иванов И.И.");
-      engineerIvanov.workOnProject("Проект1");
-      engineerIvanov.workOnProject("Проект2");
 
-      ArrayList<String> expected = new ArrayList<>();
-      expected.add("Проект1");
-      expected.add("Проект2");
+      Project proj1 = new Project("Проект1");
+      Project proj2 = new Project("Проект2");
+
+      engineerIvanov.workOnProject(proj1);
+      engineerIvanov.workOnProject(proj2);
+
+      ArrayList<Project> expected = new ArrayList<>();
+      expected.add(proj1);
+      expected.add(proj2);
 
       assertThat(engineerIvanov.listOfProject,is(expected));
     }
 
   @Test
+  public void whenEnginerWorkOnProjectThenGetMessageAboutThis(){
+    Engineer engineerIvanov = new Engineer();
+    engineerIvanov.setTheName("Иванов И.И.");
+
+    Project proj1 = new Project("Проект1");
+
+    assertThat(engineerIvanov.workOnProject(proj1),is("Иванов И.И. участвовал в проекте Проект1"));
+  }
+
+  @Test
   public void whenAddTwoSchoolClassThenGiveListOfTwoSchoolClass(){
     Teacher teacherIvanov = new Teacher();
     teacherIvanov.setTheName("Иванов И.И.");
-    teacherIvanov.teachClass("2А");
-    teacherIvanov.teachClass("4Б");
 
-    ArrayList<String> expected = new ArrayList<>();
-    expected.add("2А");
-    expected.add("4Б");
+    SchoolClass class1 = new SchoolClass("2А");
+    teacherIvanov.teachClass(class1);
+    SchoolClass class2 = new SchoolClass("4Б");
+    teacherIvanov.teachClass(class2);
+
+    ArrayList<SchoolClass> expected = new ArrayList<>();
+    expected.add(class1);
+    expected.add(class2);
 
     assertThat(teacherIvanov.listOfClass,is(expected));
+  }
+
+  @Test
+  public void whenTeacherTeacClassThenGetMessageAboutThis(){
+    Teacher teacherIvanov = new Teacher();
+    teacherIvanov.setTheName("Иванов И.И.");
+
+    SchoolClass class1 = new SchoolClass("2А");
+
+    assertThat(teacherIvanov.teachClass(class1),is("Иванов И.И. учит(-ил) класс 2А"));
   }
 
   @Test
