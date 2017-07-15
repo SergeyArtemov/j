@@ -1,14 +1,16 @@
 package ru.job4j.models;
 
-/**
- * Created by Sergey Artemov on 13.07.2017.
- * Тесты для тестирования класс Tracker.
- */
-
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * Test of Tracker.
+ *
+ * @author Sergey Artemov (mailto:sergeyartemov@yandex.ru)
+ * @version $Id$
+ * @since 0.1
+ */
 public class TrackerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {

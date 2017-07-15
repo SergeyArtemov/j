@@ -1,4 +1,8 @@
 /**
- * Created by SergeyArtemov on 12.07.2017.
+ * Package for Tracker task.
+ *
+ * @author Sergey Artemov (mailto:sergeyartemov@yandex.ru)
+ * @version $Id$
+ * @since 0.1
  */
 package ru.job4j.models;
