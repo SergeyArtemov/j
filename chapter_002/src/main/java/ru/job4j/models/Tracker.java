@@ -52,6 +52,7 @@ public class Tracker {
             if (items[i].getId() == Idd){
                 System.arraycopy(items, i+1, items, i, this.position - i);
                 items[this.position] = null;
+                position--;
                 break;
             }
         }
@@ -94,7 +95,7 @@ public class Tracker {
      *@param id **заявка**
      *@return **найденная заявка**
      */
-    protected Item findById(String id){
+    public Item findById(String id){
         Item result = null;
         for(Item item : this.items){
             if (item != null && item.getId().equals(id)) {
