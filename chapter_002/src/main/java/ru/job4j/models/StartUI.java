@@ -17,8 +17,9 @@ public class StartUI {
     static final String FINDBYID = "4";
     static final String FINDBYNAME = "5";
     static final String EXIT = "6";
-    private Item[] item11; // текущие выводимые заявки
+
     private Item item1; // текущая заявка
+    private Item[] item11; // текущие выводимые заявки
     private Tracker track = new Tracker();
     private ConsoleInput consInp = new ConsoleInput(); // класс консольного ввода
     private String resInp = ""; // временное хранение текущего ответа
