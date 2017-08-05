@@ -74,8 +74,8 @@ public class StartUI {
      * @param input **поток ввода**
      */
     public StartUI(Tracker tracker, Input input) {
-        this.input = input;
         this.track = tracker;
+        this.input = input;
     }
     /**
      *
