@@ -41,7 +41,7 @@ public class Tracker {
     public void update(Item item) {
         String idd = item.getId();
         for (int i = 0; i < position; i++) {
-            if (items[i].getId() == idd) {
+            if (items[i] != null && items[i].getId() == idd) {
                 items[i] = item;
                 break;
             }

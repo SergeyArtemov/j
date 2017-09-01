@@ -18,8 +18,8 @@ public class StubInputTest {
     @Test
     public void whenUserAddItemThenTrackerHasNewItemWithSameName() {
         Tracker tracker = new Tracker();     // создаём Tracker
-        Input input = new StubInput(new String[]{"0", "n1", "d1", "6"});   //создаём StubInput с последовательностью действий
-        new StartUI(tracker, input).start();     //   создаём StartUI и вызываем метод init()
+        Input input = new StubInput(new String[]{"0", "n1", "d1", "n", "6"});   //создаём StubInput с последовательностью действий
+        new StartUI(tracker, input).start();     //   создаём StartUI и вызываем метод start()
         assertThat(tracker.findAll()[0].getName(), is("n1")); // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
     }
 
@@ -33,7 +33,7 @@ public class StubInputTest {
         //Напрямую добавляем заявку
         Item item = tracker.add(new Item());
         //создаём StubInput с последовательностью действий
-        Input input = new StubInput(new String[]{"2", item.getId(), "n11", "d11", "0", "n1", "d1", "3", item.getId(), "6"});
+        Input input = new StubInput(new String[]{"2", item.getId(), "n11", "d11", "n", "0", "n1", "d1", "n", "3", item.getId(), "n", "6"});
         // создаём StartUI и вызываем метод start()
         new StartUI(tracker, input).start();
         // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
@@ -50,7 +50,7 @@ public class StubInputTest {
         //Напрямую добавляем заявку
         Item item = tracker.add(new Item());
         //создаём StubInput с последовательностью действий
-        Input input = new StubInput(new String[]{"2", item.getId(), "n11", "d11", "6"});
+        Input input = new StubInput(new String[]{"2", item.getId(), "n11", "d11", "n", "6"});
         // создаём StartUI и вызываем метод start()
         new StartUI(tracker, input).start();
         // проверяем, что нулевой элемент массива в трекере содержит имя, введённое при эмуляции.
