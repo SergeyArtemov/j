@@ -15,12 +15,17 @@ public class StartUI {
     private Tracker track;
 
     /**
+     * Диапозон допустимых ответов (пунктов меню)
+     */
+    private int[] ranges = new int[] {0, 1, 2, 3, 4, 5, 6};
+
+    /**
      * Поток ввода.
      */
     private Input input;
 
     /**
-     *
+     * Конструктор
      * @param tracker **трекер**
      * @param input **поток ввода**
      */
@@ -34,14 +39,14 @@ public class StartUI {
      */
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
-        ConsoleInput input = new ConsoleInput(); // класс консольного ввода
+        ConsoleInput input = new ValidateInput();
         StartUI startUI = new StartUI(tracker, input);
         startUI.start();
     }
 
 
     /**
-     *Start. Запуск.
+     *Start. Запуск работы с меню.
      */
     public void start() {
         MenuTracker menu = new MenuTracker(this.input, this.track);
@@ -49,7 +54,7 @@ public class StartUI {
         int key;
         do {
             menu.Show();
-            key = Integer.valueOf(input.ask("Select:"));
+            key = Integer.valueOf(input.ask("Select:", ranges));
             //System.out.print(key);
             menu.select(key);
         } while( key != 6 && !"y".equals(this.input.ask("Exit?(y)")));

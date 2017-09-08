@@ -22,4 +22,12 @@ public interface Input {
      * @return ****
      */
     String ask(String question);
+
+    /**
+     *
+     * @param question **question**
+     * @param range **range of valid values**
+     * @return
+     */
+    int ask(String question, int[] range);
 }

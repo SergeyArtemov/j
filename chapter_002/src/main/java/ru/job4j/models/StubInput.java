@@ -40,4 +40,9 @@ public class StubInput implements Input {
     public String ask(String question) {
         return answers[position++];
     }
+
+    public int ask(String question, int[] range) {
+        //throw new UnsupportedOperationException("UnsupportedException");
+        return -1;
+    }
 }
