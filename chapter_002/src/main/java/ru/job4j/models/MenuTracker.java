@@ -12,9 +12,14 @@ import java.text.SimpleDateFormat;
 /**
  * EditItem Внешний класс - реализует редактирование элемента.
  */
-class EditItem implements UserAction {
+class EditItem extends TemplateAction {
+
+    public EditItem(int key, String name){
+        super(key, name);
+    }
+
     public int key() {
-        return 2;
+        return this.getKey0();
     }
 
     /**
@@ -41,9 +46,9 @@ class EditItem implements UserAction {
      *
      * @return **вывод меню на консоль**
      */
-    public String info() {
-        return String.format("%s. %s",this.key(),"Edit item");
-    }
+    //public String info() {
+    //    return String.format("%s. %s",this.key(),"Edit item");
+    //}
 }
 
 /**
@@ -63,13 +68,13 @@ public class MenuTracker {
      * Наполнение массива меню actions[]
      */
     public void fillActions() {
-        this.actions[0] = this.new AddItem(); //внутренний класс
-        this.actions[1] = new MenuTracker.ShowAllItems(); //внутренний статический класс
-        this.actions[2] = new EditItem(); //внешний класс
-        this.actions[3] = this.new DeleteItem();
-        this.actions[4] = this.new FindById();
-        this.actions[5] = this.new FindByName();
-        this.actions[6] = this.new Exit();
+        this.actions[0] = this.new AddItem(0,"Add new Item"); //внутренний класс
+        this.actions[1] = new MenuTracker.ShowAllItems(1,"Show all items"); //внутренний статический класс
+        this.actions[2] = new EditItem(2,"Edit item"); //внешний класс
+        this.actions[3] = this.new DeleteItem(3,"Delete item");
+        this.actions[4] = this.new FindById(4, "Find item by id");
+        this.actions[5] = this.new FindByName(5, "Find item by name" );
+        this.actions[6] = this.new Exit(6,"Exit");
     }
 
     /**
@@ -94,9 +99,13 @@ public class MenuTracker {
     /**
      * Внутренний класс операции "Добавление элемента"
      */
-    private class AddItem implements UserAction {
+    private class AddItem extends TemplateAction {
+        public AddItem(int key, String name){
+            super(key, name);
+        }
+
         public int key() {
-            return 0;
+            return this.getKey0();
         }
 
         public void execute(Input input, Tracker tracker) {
@@ -109,17 +118,21 @@ public class MenuTracker {
             tracker.add(item1);
         }
 
-        public String info() {
-            return String.format("%s. %s",this.key(),"Add new Item");
-        }
+        //public String info() {
+        //    return String.format("%s. %s",this.key(),"Add new Item");
+        //}
     }
 
     /**
      * Внутренний статический класс операции "Вывод на консоль всех элементов"
      */
-    private static class ShowAllItems implements UserAction {
+    private static class ShowAllItems extends TemplateAction {
+        public ShowAllItems(int key, String name){
+            super(key, name);
+        }
+
         public int key() {
-            return 1;
+            return this.getKey0();
         }
 
         public void execute(Input input, Tracker tracker) {
@@ -140,17 +153,22 @@ public class MenuTracker {
             }
         }
 
-        public String info() {
-            return String.format("%s. %s",this.key(),"Show all items");
-        }
+        //public String info() {
+        //    return String.format("%s. %s",this.key(),"Show all items");
+        //}
     }
 
     /**
      * Внутренний класс операции "Удаление элемента"
      */
-    private class DeleteItem implements UserAction {
+    private class DeleteItem extends TemplateAction {
+
+        public DeleteItem(int key, String name){
+            super(key, name);
+        }
+
         public int key() {
-            return 3;
+            return this.getKey0();
         }
 
         public void execute (Input input, Tracker tracker) {
@@ -163,17 +181,21 @@ public class MenuTracker {
             }
         }
 
-        public String info() {
-            return String.format("%s. %s",this.key(),"Delete item");
-        }
+        //public String info() {
+        //   return String.format("%s. %s",this.key(),"Delete item");
+        //}
     }
 
     /**
      * Внутренний класс операции "Поиск по ID"
      */
-    private class FindById implements UserAction {
+    private class FindById extends TemplateAction {
+        public FindById (int key, String name) {
+            super(key, name);
+        }
+
         public int key() {
-            return 4;
+            return this.getKey0();
         }
 
         public void execute(Input input, Tracker tracker) {
@@ -189,17 +211,21 @@ public class MenuTracker {
                 System.out.print("id:" + item1.getId() + "\r\n");
             }
         }
-        public String info() {
-            return String.format("%s. %s", this.key(), "Find item by id");
-        }
+        //public String info() {
+        //    return String.format("%s. %s", this.key(), "Find item by id");
+        //}
     }
 
     /**
      * Внутренний класс операции "Поиск по имени"
      */
-    private class FindByName implements UserAction {
+    private class FindByName extends TemplateAction {
+        public FindByName (int key, String name) {
+            super(key, name);
+        }
+
         public int key() {
-            return 5;
+            return this.getKey0();
         }
 
         public void execute(Input input, Tracker tracker) {
@@ -217,25 +243,30 @@ public class MenuTracker {
             }
         }
 
-        public String info() {
-            return String.format("%s. %s", this.key(), "Find item by name");
-        }
+        //public String info() {
+        //    return String.format("%s. %s", this.key(), "Find item by name");
+        //}
     }
 
     /**
      * Внутренний класс операции "Exit"
      */
-    private class Exit implements UserAction {
+    private class Exit extends TemplateAction {
+
+        public Exit (int key, String name) {
+            super(key, name);
+        }
+
         public int key() {
-            return 6;
+            return this.getKey0();
         }
 
         public void execute(Input input, Tracker tracker) {
         }
 
-        public String info() {
-            return String.format("%s. %s",this.key(),"Exit");
-        }
+        //public String info() {
+        //    return String.format("%s. %s",this.key(),"Exit");
+        //}
     }
 
 }

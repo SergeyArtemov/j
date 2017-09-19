@@ -54,7 +54,8 @@ public class StartUI {
         int key;
         do {
             menu.Show();
-            key = Integer.valueOf(input.ask("Select:", ranges));
+            //key = Integer.valueOf(input.ask("Select:", ranges));
+            key = input.ask("Select:", ranges);
             //System.out.print(key);
             menu.select(key);
         } while( key != 6 && !"y".equals(this.input.ask("Exit?(y)")));
