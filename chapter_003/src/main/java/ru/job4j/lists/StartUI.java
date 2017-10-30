@@ -1,8 +1,10 @@
 package ru.job4j.lists;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.TreeSet;
+import java.util.Iterator;
 
 /**
  * StartUI класс. Стартовый класс.
@@ -46,6 +48,7 @@ public class StartUI {
         t_add = measure.add(treeSet, 100000);
         System.out.printf("size after adds = %d, add time = %d; ",treeSet.size(), t_add);
         t_del = measure.delete(treeSet, 50000);
-        System.out.printf("size after dels = %d, del time = %d",treeSet.size(), t_del);
+        System.out.printf("size after dels = %d, del time = %d \r\n",treeSet.size(), t_del);
+
     }
 }
