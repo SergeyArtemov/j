@@ -41,13 +41,13 @@ public class ConvertListTest {
         List<Integer> list1 = new LinkedList<>();
         list1.add(Integer.valueOf(1));
         list1.add(Integer.valueOf(2));
-        list1.add(Integer.valueOf(3));
+        list1.add(null);
         list1.add(Integer.valueOf(4));
         list1.add(Integer.valueOf(5));
         list1.add(Integer.valueOf(6));
         list1.add(Integer.valueOf(7));
 
-        int[][] m1 = new int[][]{{1, 2, 3},{4, 5, 6},{7, 0 ,0}};
+        int[][] m1 = new int[][]{{1, 2, 0},{4, 5, 6},{7, 0, 0}};
 
         m0 = convert.toArray(list1,3);
 

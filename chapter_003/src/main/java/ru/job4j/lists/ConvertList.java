@@ -35,6 +35,7 @@ public class ConvertList {
     public int[][] toArray(List<Integer> list, int rows) {
         int cols;
         Iterator iter = list.iterator();
+        Integer curElement;
 
         cols = list.size() / rows + (list.size() % rows > 0 ? 1 : 0);
 
@@ -43,7 +44,8 @@ public class ConvertList {
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
                 if (iter.hasNext()) {
-                    array[i][j] = ((Integer) iter.next()).intValue();
+                    curElement = (Integer)iter.next();
+                        array[i][j] = (curElement != null ? curElement.intValue() : 0);
                 } else {
                     array[i][j] = 0;
                 }
