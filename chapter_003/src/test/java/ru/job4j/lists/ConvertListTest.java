@@ -54,4 +54,24 @@ public class ConvertListTest {
         assertThat(m0, is(m1));
 
     }
+
+    @Test
+    public void WhenListOfArrayThenList() {
+        ConvertList convert = new ConvertList();
+        List<int[]> arrList = new LinkedList<>();
+
+        arrList.add(new int[]{1,2});
+        arrList.add(new int[]{3,4,5});
+        List<Integer> resList0 = convert.convert(arrList);
+
+        List<Integer> resList1 = new LinkedList<>();
+        resList1.add(new Integer(1));
+        resList1.add(new Integer(2));
+        resList1.add(new Integer(3));
+        resList1.add(new Integer(4));
+        resList1.add(new Integer(5));
+
+        assertThat(resList0, is(resList1));
+
+    }
 }

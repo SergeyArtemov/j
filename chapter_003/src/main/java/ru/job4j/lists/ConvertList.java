@@ -53,4 +53,22 @@ public class ConvertList {
         }
         return array;
     }
+
+    /**
+     *
+     * @param list **list of int[]**
+     * @return **List<Integer>**
+     */
+    public List<Integer> convert(List<int[]> list) {
+        List<Integer> resList = new LinkedList<>();
+        int[] arr;
+        Iterator iter = list.iterator();
+        while (iter.hasNext()) {
+            arr = (int[])iter.next();
+            for (int i = 0; i < arr.length; i++){
+                resList.add(new Integer(arr[i]));
+            }
+        }
+        return resList;
+    }
 }
