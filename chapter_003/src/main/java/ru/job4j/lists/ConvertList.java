@@ -1,5 +1,6 @@
 package ru.job4j.lists;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
@@ -70,5 +71,22 @@ public class ConvertList {
             }
         }
         return resList;
+    }
+
+    /**
+     *
+     * @param list **list**
+     * @return **hashmap**
+     */
+    public HashMap<Integer,User> process(List<User> list) {
+        Iterator iter = list.iterator();
+        HashMap<Integer,User> map = new HashMap<>();
+        User user;
+
+        while (iter.hasNext()){
+            user = (User)iter.next();
+            map.put(new Integer(user.getId()),user);
+        }
+        return map;
     }
 }

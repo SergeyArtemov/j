@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import java.util.HashMap;
 
 /**
  * ConvertListTest.
@@ -74,4 +75,29 @@ public class ConvertListTest {
         assertThat(resList0, is(resList1));
 
     }
+
+    @Test
+    public void WhenListThenMap() {
+        ConvertList convert = new ConvertList();
+        List<User> list = new LinkedList<>();
+
+        User us1 = new User(1,"Ivan", "Moscow");
+        User us2 = new User(2,"Peter", "S.Peterburg");
+        User us3 = new User(3,"Vladimir", "N.Novgorod");
+
+        list.add(us1);
+        list.add(us2);
+        list.add(us3);
+
+        HashMap<Integer,User> resMap0 = convert.process(list);
+
+        HashMap<Integer,User> resMap1 = new HashMap<>();
+        resMap1.put(new Integer(1), us1);
+        resMap1.put(new Integer(2), us2);
+        resMap1.put(new Integer(3), us3);
+
+        assertThat(resMap0, is(resMap1));
+
+    }
+
 }
