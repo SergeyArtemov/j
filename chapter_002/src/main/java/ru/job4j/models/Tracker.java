@@ -13,7 +13,7 @@ public class Tracker {
     /**
      *
      */
-    private Item[] items = new Item[100]; // массив для хранения заявок
+ //   private Item[] items = new Item[100]; // массив для хранения заявок
     /**
      *
      */
@@ -21,11 +21,11 @@ public class Tracker {
     /**
      *
      */
-    private int position = 0; // текущая позиция указателя в массиве заявок
+    //private int position = 0; // текущая позиция указателя в массиве заявок
     /**
      *
      */
-    private static final Random RN = new Random(); // класс для генерации случайных чисел
+     private static final Random RN = new Random(); // класс для генерации случайных чисел
 
     /**
      *add. Добавление заявки.
@@ -34,8 +34,7 @@ public class Tracker {
      */
     public Item add(Item item) {
         item.setId(String.valueOf(RN.nextInt(100)));
-        //this.items[position++] = item; /* старый вариант */
-        this.itemsL.add(position++, item); /* новый вариант */
+        itemsL.add(item); /* новый вариант */
         return item;
     }
 
@@ -44,26 +43,9 @@ public class Tracker {
      *@param item **заявка**
      */
     public void update(Item item) {
-        String idd = item.getId();
-        /* старый вариант */
-        /*for (int i = 0; i < position; i++) {
-            if (items[i] != null && items[i].getId() == idd) {
-                items[i] = item;
-                break;
-            }
-        }*/
-
-        /* Новый вариант */
-        ListIterator iter = itemsL.listIterator();
-        Item item1;
         int ind;
-        while (iter.hasNext()) {
-            ind = iter.nextIndex();
-            item1 = (Item)iter.next();
-            if (item1.getId() == idd) {
-                itemsL.set(ind, item);
-            }
-        }
+        ind = itemsL.indexOf(item);
+        if (ind != -1) itemsL.set(ind, item);
         return;
     }
 
@@ -72,26 +54,7 @@ public class Tracker {
      *@param item **заявка**
      */
     public void delete(Item item) {
-        String idd = item.getId();
-        /*старый вариант*/
-        /*
-        for (int i = 0; i < position; i++) {
-            if (items[i].getId() == idd) {
-                System.arraycopy(items, i + 1, items, i, this.position - i);
-                items[this.position] = null;
-                position--;
-                break;
-            }
-        }*/
-        /* Новый вариант */
-        ListIterator iter = itemsL.listIterator();
-        Item item1;
-        while(iter.hasNext()){
-            item1 = (Item)iter.next();
-            if (item1.getId() == idd) {
-                iter.remove();
-            }
-        }
+        itemsL.remove(item);
         return;
     }
 
@@ -101,16 +64,7 @@ public class Tracker {
      */
     public Item[] findAll() {
         Item[] result = new Item[itemsL.size()];
-        /* Новый вариант */
-        ListIterator iter = itemsL.listIterator();
-        int index = 0;
-        while (iter.hasNext()) {
-            result[index++] = (Item)iter.next();
-        }
-        /*старый вариант*/
-        /*for (int index = 0; index < this.position; index++) {
-            result[index] = this.items[index];
-        }*/
+        itemsL.toArray(result);
         return result;
     }
 
@@ -121,19 +75,10 @@ public class Tracker {
      */
     public Item findByName(String key) {
         Item result = null;
-        Item item1 = null;
-        /*старый вариант*/
-        /*
-        for (int i = 0; i < this.position; i++) {
-            if (items[i] != null && items[i].getName().equals(key)) {
-                result = items[i];
-                break;
-            }
-        }
-        */
+        Item item1;
 
         /* Новый вариант */
-        ListIterator iter = itemsL.listIterator();
+        ListIterator<Item> iter = itemsL.listIterator();
         while (iter.hasNext()) {
             item1 = ((Item)(iter.next()));
             if ( item1.getName().equals(key) ) {
@@ -141,7 +86,7 @@ public class Tracker {
                 break;
             }
         }
-    return result;
+        return result;
 
     }
 
@@ -152,10 +97,10 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        Item item1 = null;
+        Item item1;
 
         /* Новый вариант */
-        ListIterator iter = itemsL.listIterator();
+        ListIterator<Item> iter = itemsL.listIterator();
         while (iter.hasNext()) {
             item1 = ((Item)(iter.next()));
             if ( item1.getId() == id ) {
@@ -163,16 +108,6 @@ public class Tracker {
                 break;
             }
         }
-
-        /*старый вариант*/
-        /*
-        for (Item item : this.items) {
-            if (item != null && item.getId().equals(id)) {
-                result = item;
-                break;
-            }
-        }*/
-
         return result;
     }
 }
