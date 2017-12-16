@@ -1,15 +1,39 @@
 package ru.job4j.lists;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Class User.
  * @author Sergey Artemov
  * @since 06.11.2017
  * @version 1
  */
-public class User {
+public class User implements Comparable<User>{
     private int id;
     private String name;
     private String city;
+    private int age;
+
+    /**
+     * getAge
+     * @return
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * setAge
+     * @param age
+     */
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
 
     /**
      * Class constructor.
@@ -17,10 +41,24 @@ public class User {
      * @param name **name**
      * @param city **city**
      */
+    public User(int id, String name, String city, int age) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+        this.age = age;
+    }
+
+    /**
+     *
+     * @param id
+     * @param name
+     * @param city
+     */
     public User(int id, String name, String city) {
         this.id = id;
         this.name = name;
         this.city = city;
+        this.age = 18;
     }
 
     public int getId() {
@@ -45,5 +83,42 @@ public class User {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return (this.age > o.age ? 1 : (this.age < o.age ? -1 : 0));
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", city='" + city + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+        if (age != user.age) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        return city != null ? city.equals(user.city) : user.city == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + age;
+        return result;
     }
 }

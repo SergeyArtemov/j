@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.Iterator;
+import java.util.Arrays;
 
 /**
  * StartUI класс. Стартовый класс.
@@ -50,5 +51,18 @@ public class StartUI {
         t_del = measure.delete(treeSet, 50000);
         System.out.printf("size after dels = %d, del time = %d \r\n",treeSet.size(), t_del);
 
+        /*Sorting*/
+        List<User> listUser = new ArrayList<User>();
+        listUser.addAll(
+                Arrays.asList(
+                        new User(1,"Ivan","City1",22),
+                        new User(1,"Boris","City2",18),
+                        new User(1,"Zeman","City3",50)
+        )
+        );
+
+        System.out.println(listUser);
+        SortUser su = new SortUser();
+        System.out.println(su.sort(listUser));
     }
 }
