@@ -56,9 +56,10 @@ public class StartUI {
         listUser.addAll(
                 Arrays.asList(
                         new User(1,"Ivan","City1",22),
-                        new User(1,"Boris","City2",18),
-                        new User(1,"Zeman","City3",50)
-        )
+                        new User(2,"Boris","City2",18),
+                        new User(3,"Oleg","City2",18),
+                        new User(4,"Zeman","City3",50)
+                )
         );
 
         System.out.println(listUser);
