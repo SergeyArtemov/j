@@ -28,10 +28,10 @@ public class SortUserTest {
         );
 
         SortUser su = new SortUser();
-        Set<User> result = su.sort(listUser);
+        Set<User> res = su.sort(listUser);
 
-        Set<User> expectedSetUser = new TreeSet<>();
-        expectedSetUser.addAll(
+        Set<User> expected = new TreeSet<>();
+        expected.addAll(
                 Arrays.asList(
                         new User(1,"Ivan","City1",22),
                         new User(2,"Boris","City2",18),
@@ -40,6 +40,6 @@ public class SortUserTest {
                 )
         );
 
-        assertThat(result,is(expectedSetUser));
+        assertThat(res,is(expected));
     }
 }

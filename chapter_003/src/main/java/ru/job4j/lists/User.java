@@ -87,9 +87,8 @@ public class User implements Comparable<User>{
 
     @Override
     public int compareTo(User o) {
-        //return this.age - o.age;
         // учитываем, что у разных людей может быть одинаковый возраст
-        return (this.age > o.age ? 1 : (this.age < o.age ? -1 : this.id - o.id));
+        return (this.age < o.age ? -1 : (this.age > o.age ? 1 : this.id - o.id));
     }
 
     @Override
