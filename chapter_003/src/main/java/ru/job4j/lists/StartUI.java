@@ -65,5 +65,34 @@ public class StartUI {
         System.out.println(listUser);
         SortUser su = new SortUser();
         System.out.println(su.sort(listUser));
+
+        /* Sorting with Comparator */
+        List<User> listUser2 = new ArrayList<User>();
+        listUser2.addAll(
+                Arrays.asList(
+                        new User(1,"Vladislav","City11",22),
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Sergey","City22",18),
+                        new User(4,"Petr","City33",50)
+                )
+        );
+
+        //SortUser su2 = new SortUser();
+        System.out.println(su.sortByNameLength(listUser2));
+
+
+        List<User> listUser3 = new ArrayList<User>();
+        listUser3.addAll(
+                Arrays.asList(
+                        new User(1,"Vladislav","City11",22),
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Boris","City22",38),
+                        new User(4,"Petr","City33",50)
+                )
+        );
+
+        //SortUser su2 = new SortUser();
+        System.out.println(su.sortByAllFields(listUser3));
+
     }
 }

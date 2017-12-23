@@ -14,6 +14,9 @@ import static org.junit.Assert.assertThat;
  * @version 1
  */
 public class SortUserTest {
+    /**
+     * Test WhenListThenSortedThree
+     */
     @Test
     public void WhenListThenSortedThree() {
         List<User> listUser = new ArrayList<>();
@@ -42,4 +45,61 @@ public class SortUserTest {
 
         assertThat(res,is(expected));
     }
+
+    /**
+     * Test WhenInvokeSortByNameLengthThenGetSortedList
+     */
+    @Test
+    public void WhenInvokeSortByNameLengthThenGetSortedList(){
+        List<User> listUser = new ArrayList<>();
+        listUser.addAll(
+                Arrays.asList(
+                        new User(1,"Vladislav","City11",22),
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Sergey","City22",18),
+                        new User(4,"Petr","City33",50)
+                )
+        );
+
+        SortUser su = new SortUser();
+        List<User> result = su.sortByNameLength(listUser);
+        List<User> expected = new ArrayList<>();
+        expected.addAll(
+                Arrays.asList(
+                        new User(4,"Petr","City33",50),
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Sergey","City22",18),
+                        new User(1,"Vladislav","City11",22)
+                )
+        );
+    }
+
+    /**
+     * Test WhenInvokeSortByAllFieldsThenGetSortedList
+     */
+    @Test
+    public void WhenInvokeSortByAllFieldsThenGetSortedList(){
+        List<User> listUser = new ArrayList<>();
+        listUser.addAll(
+                Arrays.asList(
+                        new User(1,"Vladislav","City11",22),
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Boris","City22",38),
+                        new User(4,"Petr","City33",50)
+                )
+        );
+
+        SortUser su = new SortUser();
+        List<User> result = su.sortByAllFields(listUser);
+        List<User> expected = new ArrayList<>();
+        expected.addAll(
+                Arrays.asList(
+                        new User(2,"Boris","City22",18),
+                        new User(3,"Boris","City22",38),
+                        new User(4,"Petr","City33",50),
+                        new User(1,"Vladislav","City11",22)
+                )
+        );
+    }
+
 }
