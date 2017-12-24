@@ -15,7 +15,7 @@ public class StartUI {
     private Tracker track;
 
     /**
-     * Диапозон допустимых ответов (пунктов меню)
+     * Диапозон допустимых ответов (пунктов меню).
      */
     private int[] ranges = new int[] {0, 1, 2, 3, 4, 5, 6};
 
@@ -25,7 +25,7 @@ public class StartUI {
     private Input input;
 
     /**
-     * Конструктор
+     * Конструктор.
      * @param tracker **трекер**
      * @param input **поток ввода**
      */
@@ -53,12 +53,12 @@ public class StartUI {
         menu.fillActions();
         int key;
         do {
-            menu.Show();
+            menu.show();
             //key = Integer.valueOf(input.ask("Select:", ranges));
             key = input.ask("Select:", ranges);
             //System.out.print(key);
             menu.select(key);
-        } while( key != 6 && !"y".equals(this.input.ask("Exit?(y)")));
+        } while (key != 6 && !"y".equals(this.input.ask("Exit?(y)")));
 
     }
 

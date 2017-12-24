@@ -14,10 +14,10 @@ import java.io.PrintStream;
  */
 public class ShapeTest {
 /**
- * Test Triangle
+ * Test Triangle.
  */
 @Test
-    public void WhenTriangleThenTriangleIsInOutputStream() {
+    public void whenTriangleThenTriangleIsInOutputStream() {
     ByteArrayOutputStream out = new ByteArrayOutputStream();
     System.setOut(new PrintStream(out));
     Paint p = new Paint();
@@ -28,10 +28,10 @@ public class ShapeTest {
 }
 
 /**
-* Test Square
+* Test Square.
 */
 @Test
-    public void WhenSquareThenSquareIsInOutputStream() {
+    public void whenSquareThenSquareIsInOutputStream() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         Paint p = new Paint();

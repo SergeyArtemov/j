@@ -1,33 +1,40 @@
 package ru.job4j.lists;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
-
 /**
  * Class User.
  * @author Sergey Artemov
  * @since 06.11.2017
  * @version 1
  */
-public class User implements Comparable<User>{
+public class User implements Comparable<User> {
+    /**
+     *
+     */
     private int id;
+    /**
+     *
+     */
     private String name;
+    /**
+     *
+     */
     private String city;
+    /**
+     *
+     */
     private int age;
 
     /**
-     * getAge
-     * @return
+     * getAge.
+     * @return ****
      */
     public int getAge() {
         return age;
     }
 
     /**
-     * setAge
-     * @param age
+     * setAge.
+     * @param age ****
      */
     public void setAge(int age) {
         this.age = age;
@@ -40,6 +47,7 @@ public class User implements Comparable<User>{
      * @param id **id**
      * @param name **name**
      * @param city **city**
+     * @param age **age**
      */
     public User(int id, String name, String city, int age) {
         this.id = id;
@@ -50,9 +58,9 @@ public class User implements Comparable<User>{
 
     /**
      *
-     * @param id
-     * @param name
-     * @param city
+     * @param id ****
+     * @param name ****
+     * @param city ****
      */
     public User(int id, String name, String city) {
         this.id = id;
@@ -61,26 +69,50 @@ public class User implements Comparable<User>{
         this.age = 18;
     }
 
+    /**
+     *
+     * @return ****
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id ****
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return ****
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name ****
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return ****
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     *
+     * @param  city ****
+     */
     public void setCity(String city) {
         this.city = city;
     }
@@ -93,24 +125,29 @@ public class User implements Comparable<User>{
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", city='" + city + '\'' +
-                ", age=" + age +
-                '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", city='" + city + '\'' + ", age=" + age + '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (age != user.age) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (id != user.id) {
+            return false;
+        }
+        if (age != user.age) {
+            return false;
+        }
+        if (name != null ? !name.equals(user.name) : user.name != null) {
+            return false;
+        }
         return city != null ? city.equals(user.city) : user.city == null;
     }
 

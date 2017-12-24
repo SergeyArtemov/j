@@ -27,7 +27,7 @@ public interface Input {
      *
      * @param question **question**
      * @param range **range of valid values**
-     * @return
+     * @return ****
      */
     int ask(String question, int[] range);
 }

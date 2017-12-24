@@ -9,7 +9,11 @@ package ru.job4j.chess;
  * @version 1
  */
 public class OccupiedWayException extends RuntimeException {
-    public OccupiedWayException (String msg) {
+    /**
+     *
+     * @param msg ****
+     */
+    public OccupiedWayException(String msg) {
         super(msg);
     }
 }

@@ -9,7 +9,11 @@ package ru.job4j.chess;
  * @version 1
  */
 public class FigureNotFoundException extends RuntimeException {
-    public FigureNotFoundException (String msg) {
+    /**
+     *
+     * @param msg ****
+     */
+    public FigureNotFoundException(String msg) {
         super(msg);
     }
 }

@@ -13,13 +13,13 @@ import java.util.LinkedList;
 public class ConvertList {
     /**
      *
-     * @param array
+     * @param array ****
      * @return **list**
      */
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new LinkedList<>();
-
-        for (int x[] : array) {
+        //int x[];
+        for (int[] x : array) {
             for (int y : x) {
                 list.add(y);
             }
@@ -29,9 +29,9 @@ public class ConvertList {
 
     /**
      *
-     * @param list
+     * @param list ****
      * @param rows ***count of rows*
-     * @return
+     * @return ****
      */
     public int[][] toArray(List<Integer> list, int rows) {
         int cols;
@@ -45,7 +45,7 @@ public class ConvertList {
         for (int i = 0; i < cols; i++) {
             for (int j = 0; j < rows; j++) {
                 if (iter.hasNext()) {
-                    curElement = (Integer)iter.next();
+                    curElement = (Integer) iter.next();
                         array[i][j] = (curElement != null ? curElement.intValue() : 0);
                 } else {
                     array[i][j] = 0;
@@ -65,8 +65,8 @@ public class ConvertList {
         int[] arr;
         Iterator iter = list.iterator();
         while (iter.hasNext()) {
-            arr = (int[])iter.next();
-            for (int i = 0; i < arr.length; i++){
+            arr = (int[]) iter.next();
+            for (int i = 0; i < arr.length; i++) {
                 resList.add(new Integer(arr[i]));
             }
         }
@@ -78,14 +78,14 @@ public class ConvertList {
      * @param list **list**
      * @return **hashmap**
      */
-    public HashMap<Integer,User> process(List<User> list) {
+    public HashMap<Integer, User> process(List<User> list) {
         Iterator iter = list.iterator();
-        HashMap<Integer,User> map = new HashMap<>();
+        HashMap<Integer, User> map = new HashMap<>();
         User user;
 
-        while (iter.hasNext()){
-            user = (User)iter.next();
-            map.put(new Integer(user.getId()),user);
+        while (iter.hasNext()) {
+            user = (User) iter.next();
+            map.put(new Integer(user.getId()), user);
         }
         return map;
     }

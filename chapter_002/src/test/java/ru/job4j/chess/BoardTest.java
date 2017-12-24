@@ -11,10 +11,16 @@ import static org.junit.Assert.assertThat;
  * @version 1
  */
 public class BoardTest {
+    /**
+     *
+     */
     @Test
+    /**
+     *
+     */
     public void whenRightWayThenFigureIsPutOnNewPosition() {
         Board b = new Board();
-        boolean res = b.move(new Cell(3,1), new Cell(5,3));
+        boolean res = b.move(new Cell(3, 1), new Cell(5, 3));
         assertThat(res, is(true));
 
     }

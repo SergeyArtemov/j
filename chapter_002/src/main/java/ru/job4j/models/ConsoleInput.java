@@ -41,12 +41,12 @@ public class ConsoleInput implements Input {
      * Метод ask.
      * @param question **question**
      * @param range **range of valid values**
-     * @return
+     * @return ****
      */
     public int ask(String question, int[] range) {
         int key = Integer.valueOf(this.ask(question));
         boolean exist = false;
-        for(int value : range) {
+        for (int value : range) {
             if (value == key) {
                 exist = true;
                 break;

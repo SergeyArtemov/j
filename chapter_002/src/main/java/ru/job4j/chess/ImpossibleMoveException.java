@@ -10,7 +10,11 @@ package ru.job4j.chess;
  * @version 1
  */
 public class ImpossibleMoveException extends RuntimeException {
-    public ImpossibleMoveException (String msg) {
+    /**
+     *
+     * @param msg ****
+     */
+    public ImpossibleMoveException(String msg) {
         super(msg);
     }
 }

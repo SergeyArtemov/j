@@ -1,7 +1,7 @@
 package ru.job4j.models;
 
 /**
- * UserAction Интерфейс Действий над трекером
+ * UserAction Интерфейс Действий над трекером.
  * @author Sergey Artemov
  * @since 24.08.217
  * @version 1

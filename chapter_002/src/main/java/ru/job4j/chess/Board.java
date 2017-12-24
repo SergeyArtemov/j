@@ -8,29 +8,49 @@ package ru.job4j.chess;
  * @version 1
  */
 public class Board {
-    Figure[] figures;
-    Figure figure0;
-    Cell[] way0;
-    int number = 0;
-    int i = 0, j = 0;
-    boolean f; //флаг
+    /**
+     *
+     */
+    private Figure[] figures;
+    /**
+     *
+     */
+    private Figure figure0;
+    /**
+     *
+     */
+    private Cell[] way0;
+    /**
+     *
+     */
+    private int number = 0;
+    /**
+     *
+     */
+    private int i = 0, j = 0;
+    /**
+     *
+     */
+    private boolean f; //флаг
 
-    // Конструктор
+    /**
+     * Конструктор.
+     */
     public Board() {
         number = 0;
         figures = new Figure[32];
         // Белый слон
         figures[number] = new Bishop();
-        figures[number].color = 0; // белый
-        figures[number].position.x = 3;
-        figures[number].position.y = 1;
+        figures[number].setColor(0); // белый
+        figures[number].getPosition().setX(3);
+        figures[number].getPosition().setY(1);
         number++;
 
         // Белый слон
         figures[number] = new Bishop();
-        figures[number].color = 0; // белый
-        figures[number].position.x = 6;
-        figures[number].position.y = 1;
+        figures[number].setColor(0); // белый
+        figures[number].getPosition().setX(6);
+        figures[number].getPosition().setY(1);
         number++;
     }
 
@@ -39,15 +59,15 @@ public class Board {
      * @param source **source cell**
      * @param dist **distination cell**
      * @return **it's possible move, or not**
-     * @throws ImpossibleMoveException
-     * @throws OccupiedWayException
-     * @throws FigureNotFoundException
+     * @throws ImpossibleMoveException ****
+     * @throws OccupiedWayException ****
+     * @throws FigureNotFoundException ****
      */
     boolean move(Cell source, Cell dist) throws ImpossibleMoveException, OccupiedWayException, FigureNotFoundException {
         // Находим фигуру в массиве фигур
         i = 0;
         while (i < number) {
-            if (figures[i].position.x == source.x && figures[i].position.y == source.y) {
+            if (figures[i].getPosition().getX() == source.getX() && figures[i].getPosition().getY() == source.getY()) {
                 break;
             }
             i++;
@@ -68,12 +88,12 @@ public class Board {
             // Проверим - возможно ли пройти по этому пути
             i = 1;
             f = false;
-            while (way0[i].x != 0 && way0[i].y != 0) {
+            while (way0[i].getX() != 0 && way0[i].getY() != 0) {
                 // Проверим не заняты ли ячейки
                 j = 0;
                 while (j < number) {
-                    if (way0[i].x == figures[j].position.x
-                            && way0[i].y == figures[j].position.y) {
+                    if (way0[i].getX() == figures[j].getPosition().getX()
+                            && way0[i].getY() == figures[j].getPosition().getY()) {
                         throw new OccupiedWayException("OccupiedWay");
                         //f = true; // позиция занята
                         //break;

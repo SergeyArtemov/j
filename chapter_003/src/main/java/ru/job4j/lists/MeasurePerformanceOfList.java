@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 /**
  * MeasurePerformanceOfList class. Класс для измерения производительности вставки и удаления в разные типы списков.
- * @Author Sergey Artemov
+ * @author Sergey Artemov
  * @since 28.10.2017
  * @version 1
  */

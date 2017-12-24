@@ -5,15 +5,15 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * ChangeMoneyTest
+ * ChangeMoneyTest.
  *
- * @author Sergey Artemov
+ * @author Sergey Artemov.
  * @since 24.09.2017
  * @version 1
  */
 public class ChangeMoneyTest {
     /**
-     * Test
+     * Test.
      */
     @Test
     public void whenTenThenRightChange() {

@@ -21,7 +21,7 @@ public abstract class TemplateAction implements UserAction {
      * @param key **key**
      * @param name **name**
      */
-    public TemplateAction(int key, String name){
+    public TemplateAction(int key, String name) {
         this.key0 = key;
         this.name = name;
     }
@@ -52,7 +52,7 @@ public abstract class TemplateAction implements UserAction {
      * @return **вывод на печать: номер пункта. наименование**
      */
     public String info() {
-        return String.format("%s. %s",this.key(),this.name);
+        return String.format("%s. %s", this.key(), this.name);
     }
 
 }

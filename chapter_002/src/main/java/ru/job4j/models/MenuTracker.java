@@ -13,11 +13,19 @@ import java.text.SimpleDateFormat;
  * EditItem Внешний класс - реализует редактирование элемента.
  */
 class EditItem extends TemplateAction {
-
-    public EditItem(int key, String name){
+    /**
+     *
+     * @param key ****
+     * @param name ****
+     */
+    EditItem(int key, String name) {
         super(key, name);
     }
 
+    /**
+     *
+     * @return ****
+     */
     public int key() {
         return this.getKey0();
     }
@@ -27,7 +35,7 @@ class EditItem extends TemplateAction {
      * @param input **ввод-вывод**
      * @param tracker **трекер**
      */
-    public void execute (Input input, Tracker tracker) {
+    public void execute(Input input, Tracker tracker) {
         String resInp = input.ask("Input ID of the item:");
         Item item1 = tracker.findById(resInp);
         if (item1 == null) {
@@ -55,26 +63,40 @@ class EditItem extends TemplateAction {
  * MenuTracker. Класс меню.
  */
 public class MenuTracker {
+    /**
+     *
+     */
     private Input input;
+    /**
+     *
+     */
     private Tracker tracker;
+    /**
+     *
+     */
     private UserAction[] actions = new UserAction[10];
 
-    public MenuTracker(Input input, Tracker tracker){
+    /**
+     *
+     * @param input ****
+     * @param tracker ****
+     */
+    public MenuTracker(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
 
     /**
-     * Наполнение массива меню actions[]
+     * Наполнение массива меню actions[].
      */
     public void fillActions() {
-        this.actions[0] = this.new AddItem(0,"Add new Item"); //внутренний класс
-        this.actions[1] = new MenuTracker.ShowAllItems(1,"Show all items"); //внутренний статический класс
-        this.actions[2] = new EditItem(2,"Edit item"); //внешний класс
-        this.actions[3] = this.new DeleteItem(3,"Delete item");
+        this.actions[0] = this.new AddItem(0, "Add new Item"); //внутренний класс
+        this.actions[1] = new MenuTracker.ShowAllItems(1, "Show all items"); //внутренний статический класс
+        this.actions[2] = new EditItem(2, "Edit item"); //внешний класс
+        this.actions[3] = this.new DeleteItem(3, "Delete item");
         this.actions[4] = this.new FindById(4, "Find item by id");
-        this.actions[5] = this.new FindByName(5, "Find item by name" );
-        this.actions[6] = this.new Exit(6,"Exit");
+        this.actions[5] = this.new FindByName(5, "Find item by name");
+        this.actions[6] = this.new Exit(6, "Exit");
     }
 
     /**
@@ -86,9 +108,9 @@ public class MenuTracker {
     }
 
     /**
-     * Вывод на консоль меню
+     * Вывод на консоль меню.
      */
-    public void Show() {
+    public void show() {
         for (UserAction action : this.actions) {
             if (action != null) {
                 System.out.println(action.info());
@@ -97,17 +119,31 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний класс операции "Добавление элемента"
+     * Внутренний класс операции "Добавление элемента".
      */
     private class AddItem extends TemplateAction {
-        public AddItem(int key, String name){
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        AddItem(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
         public void execute(Input input, Tracker tracker) {
             Item item1 = new Item();
             String resInp = input.ask("name for the new item:");
@@ -124,17 +160,31 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний статический класс операции "Вывод на консоль всех элементов"
+     * Внутренний статический класс операции "Вывод на консоль всех элементов".
      */
     private static class ShowAllItems extends TemplateAction {
-        public ShowAllItems(int key, String name){
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        ShowAllItems(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
         public void execute(Input input, Tracker tracker) {
             SimpleDateFormat f1 = new SimpleDateFormat("dd.MM.yy hh:mm"); //формат даты-времени
             //String resInp;
@@ -159,19 +209,32 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний класс операции "Удаление элемента"
+     * Внутренний класс операции "Удаление элемента".
      */
     private class DeleteItem extends TemplateAction {
-
-        public DeleteItem(int key, String name){
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        DeleteItem(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
-        public void execute (Input input, Tracker tracker) {
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
+        public void execute(Input input, Tracker tracker) {
             String resInp = input.ask("Input ID of the item for deleting:");
             Item item1 = tracker.findById(resInp);
             if (item1 == null) {
@@ -187,17 +250,31 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний класс операции "Поиск по ID"
+     * Внутренний класс операции "Поиск по ID".
      */
     private class FindById extends TemplateAction {
-        public FindById (int key, String name) {
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        FindById(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
         public void execute(Input input, Tracker tracker) {
             SimpleDateFormat f1 = new SimpleDateFormat("dd.MM.yy hh:mm"); //формат даты-времени
             String resInp = input.ask("Input ID of the item to find:");
@@ -217,17 +294,31 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний класс операции "Поиск по имени"
+     * Внутренний класс операции "Поиск по имени".
      */
     private class FindByName extends TemplateAction {
-        public FindByName (int key, String name) {
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        FindByName(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
         public void execute(Input input, Tracker tracker) {
             SimpleDateFormat f1 = new SimpleDateFormat("dd.MM.yy hh:mm"); //формат даты-времени
             String resInp = input.ask("Input name of the item to find:");
@@ -249,18 +340,31 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний класс операции "Exit"
+     * Внутренний класс операции "Exit".
      */
     private class Exit extends TemplateAction {
-
-        public Exit (int key, String name) {
+        /**
+         *
+         * @param key ****
+         * @param name ****
+         */
+        Exit(int key, String name) {
             super(key, name);
         }
 
+        /**
+         *
+         * @return ****
+         */
         public int key() {
             return this.getKey0();
         }
 
+        /**
+         *
+         * @param input **ввод-вывод**
+         * @param tracker **трекер**
+         */
         public void execute(Input input, Tracker tracker) {
         }
 

@@ -2,7 +2,11 @@ package ru.job4j.lists;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -15,18 +19,18 @@ import static org.junit.Assert.assertThat;
  */
 public class SortUserTest {
     /**
-     * Test WhenListThenSortedThree
+     * Test WhenListThenSortedThree.
      */
     @Test
-    public void WhenListThenSortedThree() {
+    public void whenListThenSortedThree() {
         List<User> listUser = new ArrayList<>();
 
         listUser.addAll(
                 Arrays.asList(
-                        new User(1,"Ivan","City1",22),
-                        new User(2,"Boris","City2",18),
-                        new User(3,"Oleg","City2",18),
-                        new User(4,"Zeman","City3",50)
+                        new User(1, "Ivan", "City1", 22),
+                        new User(2, "Boris", "City2", 18),
+                        new User(3, "Oleg", "City2", 18),
+                        new User(4, "Zeman", "City3", 50)
                 )
         );
 
@@ -36,28 +40,28 @@ public class SortUserTest {
         Set<User> expected = new TreeSet<>();
         expected.addAll(
                 Arrays.asList(
-                        new User(1,"Ivan","City1",22),
-                        new User(2,"Boris","City2",18),
-                        new User(3,"Oleg","City2",18),
-                        new User(4,"Zeman","City3",50)
+                        new User(1, "Ivan", "City1", 22),
+                        new User(2, "Boris", "City2", 18),
+                        new User(3, "Oleg", "City2", 18),
+                        new User(4, "Zeman", "City3", 50)
                 )
         );
 
-        assertThat(res,is(expected));
+        assertThat(res, is(expected));
     }
 
     /**
-     * Test WhenInvokeSortByNameLengthThenGetSortedList
+     * Test WhenInvokeSortByNameLengthThenGetSortedList.
      */
     @Test
-    public void WhenInvokeSortByNameLengthThenGetSortedList(){
+    public void whenInvokeSortByNameLengthThenGetSortedList() {
         List<User> listUser = new ArrayList<>();
         listUser.addAll(
                 Arrays.asList(
-                        new User(1,"Vladislav","City11",22),
-                        new User(2,"Boris","City22",18),
-                        new User(3,"Sergey","City22",18),
-                        new User(4,"Petr","City33",50)
+                        new User(1, "Vladislav", "City11", 22),
+                        new User(2, "Boris", "City22", 18),
+                        new User(3, "Sergey", "City22", 18),
+                        new User(4, "Petr", "City33", 50)
                 )
         );
 
@@ -66,26 +70,26 @@ public class SortUserTest {
         List<User> expected = new ArrayList<>();
         expected.addAll(
                 Arrays.asList(
-                        new User(4,"Petr","City33",50),
-                        new User(2,"Boris","City22",18),
-                        new User(3,"Sergey","City22",18),
-                        new User(1,"Vladislav","City11",22)
+                        new User(4, "Petr", "City33", 50),
+                        new User(2, "Boris", "City22", 18),
+                        new User(3, "Sergey", "City22", 18),
+                        new User(1, "Vladislav", "City11", 22)
                 )
         );
     }
 
     /**
-     * Test WhenInvokeSortByAllFieldsThenGetSortedList
+     * Test WhenInvokeSortByAllFieldsThenGetSortedList.
      */
     @Test
-    public void WhenInvokeSortByAllFieldsThenGetSortedList(){
+    public void whenInvokeSortByAllFieldsThenGetSortedList() {
         List<User> listUser = new ArrayList<>();
         listUser.addAll(
                 Arrays.asList(
-                        new User(1,"Vladislav","City11",22),
-                        new User(2,"Boris","City22",18),
-                        new User(3,"Boris","City22",38),
-                        new User(4,"Petr","City33",50)
+                        new User(1, "Vladislav", "City11", 22),
+                        new User(2, "Boris", "City22", 18),
+                        new User(3, "Boris", "City22", 38),
+                        new User(4, "Petr", "City33", 50)
                 )
         );
 
@@ -94,10 +98,10 @@ public class SortUserTest {
         List<User> expected = new ArrayList<>();
         expected.addAll(
                 Arrays.asList(
-                        new User(2,"Boris","City22",18),
-                        new User(3,"Boris","City22",38),
-                        new User(4,"Petr","City33",50),
-                        new User(1,"Vladislav","City11",22)
+                        new User(2, "Boris", "City22", 18),
+                        new User(3, "Boris", "City22", 38),
+                        new User(4, "Petr", "City33", 50),
+                        new User(1, "Vladislav", "City11", 22)
                 )
         );
     }

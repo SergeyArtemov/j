@@ -3,14 +3,18 @@ package ru.job4j.moneychanger;
 import java.util.Scanner;
 
 /**
- * StartMoneyChanger
+ * StartMoneyChanger.
  * @author SergeyArtemov
  * @since 24.09.2017
  * @version 1
  *
  */
 public class StartMoneyChanger {
-    public static void main (String[] args) {
+    /**
+     *
+     * @param args ****
+     */
+    public static void main(String[] args) {
         int s; // money for changing
         Scanner scan = new Scanner(System.in);
         System.out.print("Введите денежную сумму:");

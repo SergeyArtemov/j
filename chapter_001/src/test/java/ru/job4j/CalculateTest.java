@@ -16,7 +16,7 @@ import static org.junit.Assert.assertThat;
 */
 public class CalculateTest {
 /**
-* Test add.
+* Test Add.
 */
 @Test
 public void whenAddOneToOneThenTwo() {

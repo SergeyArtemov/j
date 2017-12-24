@@ -1,6 +1,9 @@
 package ru.job4j.models;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Random;
 
 /**
  * Tracker. Управления поступающими заявками.
@@ -45,7 +48,9 @@ public class Tracker {
     public void update(Item item) {
         int ind;
         ind = itemsL.indexOf(item);
-        if (ind != -1) itemsL.set(ind, item);
+        if (ind != -1) {
+            itemsL.set(ind, item);
+        }
         return;
     }
 
@@ -80,8 +85,8 @@ public class Tracker {
         /* Новый вариант */
         ListIterator<Item> iter = itemsL.listIterator();
         while (iter.hasNext()) {
-            item1 = ((Item)(iter.next()));
-            if ( item1.getName().equals(key) ) {
+            item1 = ((Item) (iter.next()));
+            if (item1.getName().equals(key)) {
                 result = item1;
                 break;
             }
@@ -102,8 +107,8 @@ public class Tracker {
         /* Новый вариант */
         ListIterator<Item> iter = itemsL.listIterator();
         while (iter.hasNext()) {
-            item1 = ((Item)(iter.next()));
-            if ( item1.getId() == id ) {
+            item1 = ((Item) (iter.next()));
+            if (item1.getId() == id) {
                 result = item1;
                 break;
             }

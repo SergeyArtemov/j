@@ -1,7 +1,7 @@
 /**
- * moneychanger package
+ * moneychanger package.
  *
- * @author Sergey Artemov
+ * @author Sergey Artemov.
  * @since 24.09.2017
  * @version 1
  */

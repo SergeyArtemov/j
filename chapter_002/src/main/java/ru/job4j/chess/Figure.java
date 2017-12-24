@@ -9,20 +9,53 @@ package ru.job4j.chess;
  */
 public abstract class Figure {
     /**
-     * Конструктор
+     * Конструктор.
      */
     public Figure() {
         this.position = new Cell();
     }
 
     /**
+     *
+     * @return ****
+     */
+    public Cell getPosition() {
+        return position;
+    }
+
+    /**
+     *
+     * @param position ****
+     */
+    public void setPosition(Cell position) {
+        this.position = position;
+    }
+
+    /**
      * Position on board.
      */
-    public Cell position;
+    private Cell position;
+
     /**
-     * Color of bishop
+     *
+     * @return ****
      */
-    public int color; // цвет 0 - белый, 1 - черный
+    public int getColor() {
+        return color;
+    }
+
+    /**
+     *
+     * @param color ****
+     */
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    /**
+     * Color of bishop.
+     */
+    private int color; // цвет 0 - белый, 1 - черный
 
     /**
      *
@@ -37,9 +70,9 @@ public abstract class Figure {
      * @param dist **set the figure on the position**
      * @return **the figure**
      */
-    public Figure clone(Cell dist){
-        position.x = dist.x;
-        position.y = dist.y;
+    public Figure clone(Cell dist) {
+        position.setX(dist.getX());
+        position.setY(dist.getY());
         return this;
     }
 }

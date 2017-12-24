@@ -41,6 +41,12 @@ public class StubInput implements Input {
         return answers[position++];
     }
 
+    /**
+     *
+     * @param question **question**
+     * @param range **range of valid values**
+     * @return ****
+     */
     public int ask(String question, int[] range) {
         return Integer.valueOf(answers[position++]);
     }
