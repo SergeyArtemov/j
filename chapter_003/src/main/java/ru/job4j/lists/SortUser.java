@@ -38,7 +38,7 @@ public class SortUser {
                                     public int compare(User u1, User u2) {
                                         int len1 = u1.getName().length();
                                         int len2 = u2.getName().length();
-                                        return (len1 > len2 ? 1 : (len1 < len2 ? -1 : 0));
+                                        return (len1 > len2 ? 1 : (len1 < len2 ? -1 : u2.getId() - u1.getId()));
                                     }
         });
         return userList;
@@ -55,7 +55,7 @@ public class SortUser {
                     public int compare(User u1, User u2) {
                         int ordName = u1.getName().compareTo(u2.getName());
                         int ordAge = (u1.getAge() - u2.getAge()) / Math.abs(u1.getAge() - u2.getAge());
-                        int ord = (ordName > 1 ? 1 : (ordName < 1 ? -1 : ordAge));
+                        int ord = (ordName != 0 ? ordName : (ordAge != 0 ? ordAge : u2.getId() - u1.getId()));
                         return ord;
             }
         });
